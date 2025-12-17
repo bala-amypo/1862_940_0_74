@@ -4,10 +4,13 @@ package com.example.demo.model;
 import java.time.LocalDate;
 
 public class StudentDetail {
+    @id
     private long id;
     private String name;
     private String email;
     private LocalDate dob;
+    
+    
     
     public StudentDetail(long id, String name, String email, LocalDate dob, float cgpa) {
         this.id = id;
@@ -20,7 +23,7 @@ public class StudentDetail {
 
     public long getId() {
         return id;
-    }l
+    }
     public void setId(long id) {
         this.id = id;   
     }
