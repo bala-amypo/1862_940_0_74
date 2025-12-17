@@ -4,12 +4,12 @@ package com.example.demo.model;
 import java.time.LocalDate;
 
 public class StudentDetail {
-    private int id;
+    private long id;
     private String name;
     private String email;
     private LocalDate dob;
     
-    public StudentDetail(int id, String name, String email, LocalDate dob, float cgpa) {
+    public StudentDetail(long id, String name, String email, LocalDate dob, float cgpa) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -18,10 +18,10 @@ public class StudentDetail {
     public StudentDetail() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;   
     }
     public String getName() {
