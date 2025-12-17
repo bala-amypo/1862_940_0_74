@@ -20,7 +20,7 @@ public class StudentDetail {
 
     public long getId() {
         return id;
-    }
+    }l
     public void setId(long id) {
         this.id = id;   
     }
