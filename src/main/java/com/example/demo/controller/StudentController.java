@@ -5,6 +5,7 @@ import com.example.demo.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/students")
@@ -18,21 +19,22 @@ public class StudentController {
 
     @PostMapping
     public Student create(@RequestBody Student student) {
-        return service.save(student);
+        return service.saveStudent(student);
     }
 
     @GetMapping
     public List<Student> getAll() {
-        return service.getAll();
+        return service.getAllStudents();
     }
 
     @GetMapping("/{id}")
     public Student getById(@PathVariable Long id) {
-        return service.getById(id);
+        Optional<Student> student = service.getStudentById(id);
+        return student.orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        service.delete(id);
+        service.deleteStudent(id);
     }
 }
